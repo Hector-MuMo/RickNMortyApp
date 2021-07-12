@@ -37,6 +37,22 @@ img {
 .loc-container > .title {
   max-width: 500px;
   height: auto;
+  opacity: 1;
+  animation-name: titleOp;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes titleOp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
 }
 
 /* SearchBox styles */
@@ -47,6 +63,16 @@ img {
 }
 
 .search-box input {
+  margin: 10px 0;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.search-box select {
   margin: 10px 0;
   padding: 5px;
   border: none;
@@ -120,25 +146,58 @@ img {
   align-items: center;
   background-color: #000;
   width: 550px;
-  border: solid 3px var(--PrimaryColor);
+  border: solid 2px var(--PrimaryColor);
   border-radius: 5px;
   box-shadow: 0 0 3px 3px var(--PrimaryColorDark);
   margin: 5px;
+  animation-name: borderOut;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes borderOut {
+  from {
+    box-shadow: 0 0 5px 5px var(--PrimaryColorDark);
+  }
+
+  to {
+    border: solid 2px #16acc999;
+    box-shadow: 0 0 0px 0px var(--PrimaryColorDark);
+  }
 }
 
 .res-container > figure {
   max-width: 45%;
-  height: 200px;
+  height: auto;
   flex: 1 1 100px;
-  margin: 5px;
+  margin: 15px;
   border: solid 3px var(--SecondaryColor);
   box-shadow: 0 0 3px 3px var(--SecondaryColorDark);
   border-radius: 50%;
   overflow: hidden;
+  animation-name: borderIn;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes borderIn {
+  from {
+    box-shadow: 0 0 5px 5px var(--SecondaryColorDark);
+  }
+
+  to {
+    border: solid 3px #d2db4a99;
+    box-shadow: 0 0 0px 0px var(--PrimaryColorDark);
+  }
 }
 
 .res-container > article {
-  max-width: 50%;
+  width: 50%;
+  margin-bottom: 15px;
 }
 
 .res-container > article > h3 {
